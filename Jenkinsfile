@@ -9,7 +9,14 @@ pipeline {
       }
       stage('Docker Build') { 
          steps {
-            sh 'cd azure-vote && docker image ls && docker build -t jenkins-pipeline . && cd ..'
+            pwsh(script: 'docker images -a') //checking local docker images (test)
+            pwsh(script: """
+               cd azure-vote/
+               docker images -a
+               docker build -t jenkins-pipeline .
+               docker images -a
+               cd ..
+            """)
          }
       }
       // stage('Start test app') {
