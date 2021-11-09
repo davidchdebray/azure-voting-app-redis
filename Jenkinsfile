@@ -37,7 +37,7 @@ pipeline {
       }
       stage('Run Tests') {
          steps {
-            pwsh(script: """
+            powershell(script: """
                pytest ./tests/test_sample.py
             """)
          }
