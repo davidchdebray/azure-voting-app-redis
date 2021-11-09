@@ -122,6 +122,10 @@ pipeline {
          }
       }
    }
+}
+
+
+
 
 
 // notify function
@@ -131,9 +135,3 @@ def notify(status) {
     subject: "status: Job ${JOB_NAME} Build #${BUILD_NUMBER}", 
     to: "localhost:8025", "david.debray@protonmail.com"
 }
-
-
-}
-
-
-
