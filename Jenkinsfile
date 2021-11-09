@@ -37,7 +37,9 @@ pipeline {
       }
       stage('Run Tests') {
          steps {
-            sh 'python3 ./tests/test_sample.py' 
+            pwsh(script: """
+               pytest ./tests/test_sample.py
+            """)
          }
       }
       stage('Stop test app') {
