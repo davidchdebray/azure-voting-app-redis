@@ -37,9 +37,7 @@ pipeline {
       }
       stage('Run Tests') {
          steps {
-            powershell(script: """
-               pytest ./tests/test_sample.py
-            """)
+            sh 'python ./tests/test_sample.py' 
          }
       }
       stage('Stop test app') {
