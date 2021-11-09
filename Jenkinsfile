@@ -30,7 +30,7 @@ pipeline {
                echo "App started successfully :)"
             }
             failure {
-               echo "App failed to start :(",
+               // echo "App failed to start :(",
                notify("FAIL")
             }
          }
