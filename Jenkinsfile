@@ -31,6 +31,7 @@ pipeline {
             }
             failure {
                echo "App failed to start :("
+               notify("FAIL")
             }
          }
       }
@@ -121,4 +122,16 @@ pipeline {
          }
       }
    }
+}
+
+
+
+// notify function
+def notify(status){
+  emailext (
+    to: "address@demo.com"
+    subject: "${status}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+    body: """<p>${status}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+      <p>Check console output at <a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a></p>""",
+  )
 }
