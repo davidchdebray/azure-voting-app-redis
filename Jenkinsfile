@@ -9,7 +9,7 @@ pipeline {
       }
       stage('Docker Build') { 
          steps {
-            pwsh(script: 'docker images -a') //checking local docker images (test)
+            //pwsh(script: 'docker images -a') //checking local docker images (test)
             pwsh(script: """
                cd azure-vote/
                docker images -a
