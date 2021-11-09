@@ -131,8 +131,6 @@ Check it out at: BUILD_URL ''', subject: 'status: Job JOB_NAME Build #BUILD_NUMB
 }
 
 
-
-
 }
 
 
