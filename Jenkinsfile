@@ -125,9 +125,11 @@ pipeline {
 
 
 // notify function
-def notify(status){
-  emailext body: '''status: Job JOB_NAME Build #BUILD_NUMBER
-Check it out at: BUILD_URL ''', subject: 'status: Job JOB_NAME Build #BUILD_NUMBER', to: 'localhost:8025'
+def notify(status) {
+   emailext body: """${status}: Job ${JOB_NAME} Build #${BUILD_NUMBER} 
+   Check it out at: ${BUILD_URL} """, 
+    subject: "status: Job ${JOB_NAME} Build #${BUILD_NUMBER}", 
+    to: "localhost:8025", "david.debray@protonmail.com"
 }
 
 
